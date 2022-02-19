@@ -1,0 +1,3 @@
+
+<app-login *ngIf="!userLoggedIn" (loginForm)="onClickLog($event)"></app-login>
+<app-game *ngIf="userLoggedIn"   [user]="user" (logOut)="onClickLogout()"></app-game> 

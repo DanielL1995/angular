@@ -1,0 +1,33 @@
+<div>
+    <div>
+        <p>Player: {{user.name}} </p>
+        <p>Game Status:{{gameStatus}} </p>
+        <p>Score: {{score}} </p>
+        <p>Game time: {{timer}}</p>
+        <div class="startStop">
+            <button (click)="onStartButtonPressed()">Start</button>
+            <button (click)="onStopButtonPressed()">Stop</button>
+            <button (click)="onResetButtonPressed()">Reset</button>
+        </div>
+    </div>
+    
+    <button class="endGame" (click)="onClickLogOut()">Zakończ grę</button>
+
+<div class="gameContainer">
+    <ngx-snake #game (foodEaten)="foodEaten()" (gameOver)="gameOver()"></ngx-snake>
+
+    
+<div class="buttons">
+    
+    <br>
+    <button (click)="onUpButtonPressed()">Up</button>
+    <br>
+    <button (click)="onLeftButtonPressed()">Left</button>
+    <button (click)="onRightButtonPressed()">Right</button>
+    <br>
+    <button (click)="onDownButtonPressed()">Down</button>
+</div>
+    
+</div>
+
+</div>

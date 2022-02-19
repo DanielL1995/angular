@@ -1,0 +1,41 @@
+
+
+<div class="login">
+    <div class="form">
+        <form (ngSubmit)="onClickLog(f.form)" #f="ngForm">
+            <hr class="style-five">
+            <label>Nazwa</label>
+            
+            <input 
+            type="text"
+            name="userName"
+            ngModel
+            required
+            #user="ngModel"
+            
+            >
+            <p *ngIf="!user.valid && !user.untouched">Nie wpisałeś nazwy użytkownika!</p>
+            <hr class="style-five">
+            <label>Email:</label>
+            
+            <input class="h"
+            type="email"
+            ngModel
+            name="userEmail"
+            required
+            email
+            #emai="ngModel"
+            
+            >
+            <p *ngIf="!emai.valid && emai.touched">Wpisz poprawny adres email!</p>
+            <hr>
+            <button
+             type="submit"
+             [disabled]="!f.valid">Zaloguj</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- #f="ngForm" Daj mi dostęp do tych form automatycznie -->
