@@ -1,0 +1,57 @@
+
+
+<div class="login">
+    <div class="form">
+        <form [formGroup]="spamForm"
+        (ngSubmit)="onClickLog()"
+        [ngClass]="spamForm.value['colorPalet']"
+        >
+            <hr class="style-five">
+            <label>Nazwa</label>
+            
+            <input 
+            type="text"
+            formControlName="name"
+            required
+            minLength="3"
+            >
+            <!-- <p *ngIf="spamForm.controls['name']"
+            >
+                Incorrect name
+            </p> -->
+            
+            <hr class="style-five">
+            <label>Email:</label>
+            
+            <input class="h"
+            type="email"
+            formControlName="email"
+            required
+            >
+            <hr>
+            <button
+             type="submit"
+             [disabled]="spamForm.invalid"
+             >Zaloguj</button>
+             <br>
+             <label for="colorPalet">
+                color palette: </label>
+               <select
+               name="colorPalet"
+               formControlName="colorPalet"
+               id="colorPalet"
+               (change)="selectColor"
+               >
+                   <option *ngFor="let color of colorPalet" [ngValue]="color">{{ color }}</option>
+                   
+               </select>
+        </form>
+      
+      
+      
+    </div>
+</div>
+
+
+
+<!-- #f="ngForm" Daj mi dostęp do tych form automatycznie -->

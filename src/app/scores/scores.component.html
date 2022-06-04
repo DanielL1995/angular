@@ -1,0 +1,9 @@
+<div>
+    <div>
+        <p>Highscore:</p>
+        <li *ngFor="let score of highscore | sortScore">{{score.name}} : {{score.score}}</li>
+    </div>
+    
+</div>
+
+<button (click)="goBack()">GoBack</button>
